@@ -1,0 +1,31 @@
+<app-header></app-header>
+
+
+
+
+<div class="row ml-5 myCall">
+    <div class="card" style="width: 18rem;">
+        <img src="./../../../assets/images/DeWatermark.ai_1759742247290.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Banna</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <!-- <a  class="btn btn-primary">Add</a> -->
+          <button  class="btn btn-primary" (click)="decreae(1)">-</button>
+          {{count_number()}}
+          <button  class="btn btn-primary" (click)="increase(1)">+</button>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="./../../../assets/images/DeWatermark.ai_1759742247290.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Apple</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <!-- <a  class="btn btn-primary">Add</a> -->
+          <button class="btn btn-primary" (click)="decreae(2)">-</button>
+          {{ count_number()}}
+          <button  class="btn btn-primary" (click)="increase(2)">+</button>
+        </div>
+      </div>
+</div>
+   
+    

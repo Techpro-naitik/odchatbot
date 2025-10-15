@@ -1,0 +1,59 @@
+.speech-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 12px;
+    background: #f8f9fa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+    h2 {
+      margin-bottom: 15px;
+      color: #333;
+    }
+  
+    .controls {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+  
+      button {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        color: white;
+        font-weight: 500;
+  
+        &:first-child {
+          background-color: #007bff;
+        }
+        &:last-child {
+          background-color: #dc3545;
+        }
+  
+        &:disabled {
+          background-color: #ccc;
+          cursor: not-allowed;
+        }
+      }
+    }
+  
+    textarea {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      resize: none;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+  
+    .status {
+      color: green;
+      font-weight: bold;
+    }
+  }
+  

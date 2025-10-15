@@ -1,0 +1,13 @@
+<div class="speech-box">
+    <h2>🎙️ Speech to Text (Web)</h2>
+  
+    <div class="controls">
+      <button (click)="startListening()" [disabled]="isRecording">Start</button>
+      <button (click)="stopListening()" [disabled]="!isRecording">Stop</button>
+    </div>
+  
+    <p *ngIf="isRecording" class="status">Listening...</p>
+  
+    <textarea [(ngModel)]="transcript" placeholder="Your speech will appear here..." rows="6"></textarea>
+  </div>
+  

@@ -1,0 +1,491 @@
+
+  .chat-popup {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    width: 300px;
+    max-height: 400px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 998;
+  }
+  
+
+
+/* Root Theme Colors (Odisha One style) */
+:root {
+    --odisha-primary: #e85c0d;
+    --odisha-dark: #2c2c2c;
+    --odisha-light-bg: #fdf6f0;
+    --odisha-header-bg: #f3e0d0;
+    --odisha-border-pattern: url("https://www.transparenttextures.com/patterns/nistri.png");
+  }
+  
+  /* Wrapper */
+  .odisha-chat-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: var(--odisha-light-bg) var(--odisha-border-pattern);
+    font-family: "Noto Sans Oriya", "Noto Sans", sans-serif;
+    position: relative;
+  }
+  
+  /* Header */
+  .chat-header {
+    background-color: var(--odisha-header-bg);
+    border-bottom: 4px solid var(--odisha-primary);
+    border-radius: 20px 20px 20px 20px;
+    display: flex;
+    background: #f8e0c9;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chat-header .header-left {
+    display: flex;
+    align-items: center;
+    background:  #f8e0c9;
+    gap: 10px;
+  }
+  
+  .header-logo {
+    width: 200px;
+    height: px;
+    border-radius: 50%;
+    border: 2px solid var(--odisha-primary);
+    background:  #f8e0c9;
+  }
+  
+  .header-info h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    color: var(--odisha-dark);
+    background:  #f8e0c9;
+    font-weight: 700;
+  }
+  
+  .header-info p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--odisha-primary);
+  }
+  
+  /* Chat Body */
+  .chat-body {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    background: url("https://www.transparenttextures.com/patterns/white-diamond.png");
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Scrollbar */
+  .chat-body::-webkit-scrollbar {
+    width: 6px;
+  }
+  .chat-body::-webkit-scrollbar-thumb {
+    background-color: #d1bfa3;
+    border-radius: 3px;
+  }
+  
+  /* Message Bubbles */
+  .chat-message {
+    display: flex;
+    flex-direction: column;
+    max-width: 75%;
+    word-wrap: break-word;
+  }
+  
+  .chat-message.user {
+    align-self: flex-end;
+    background: #fff5eb;
+    border: 1px solid #f5c49b;
+    border-radius: 14px 14px 0 14px;
+    padding: 8px 12px;
+  }
+  
+  .chat-message.bot {
+    align-self: flex-start;
+    background: #ffffff;
+    border: 1px solid #e4d3c2;
+    border-radius: 14px 14px 14px 0;
+    padding: 8px 12px;
+  }
+  
+  .message-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--odisha-dark);
+  }
+  
+  .time {
+    align-self: flex-end;
+    font-size: 0.7rem;
+    color: #b18c6d;
+    margin-top: 3px;
+  }
+  
+  /* Footer */
+  .chat-footer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #fffdfb;
+    border-top: 2px solid var(--odisha-primary);
+  }
+  
+  .chat-footer input {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 20px;
+    border: 1px solid #e2c5a5;
+    outline: none;
+    font-size: 0.95rem;
+    background: #fffaf5;
+  }
+  
+  .chat-footer input::placeholder {
+    color: #b18c6d;
+  }
+  
+  .chat-footer button {
+    background-color: var(--odisha-primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .chat-footer button:not(:disabled) {
+    background-color: #f16f25;
+  }
+  
+//   .chat-footer button:disabled {
+//     opacity: 0.6;
+//     cursor: not-allowed;
+//   }
+  
+  /* Decorative bottom ribbon (Odisha One style) */
+  .odisha-chat-wrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 16px;
+    // background: repeating-linear-gradient(
+    //   90deg,
+    //   #e85c0d 0,
+    //   #e85c0d 20px,
+    //   #ffffff 20px,
+    //   #ffffff 40px,
+    //   #000000 40px,
+    //   #000000 60px
+    // );
+  }
+  
+
+
+  .button-bar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    border: 1px solid #ccc;
+    border-radius: 24px;
+    background: #f9f9f9;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    transition: background 0.2s;
+  }
+
+  .btn:hover {
+    background: #f0f0f0;
+  }
+
+  .btn svg {
+    width: 18px;
+    height: 18px;
+    fill: #333;
+  }
+
+  .btn.voice {
+    background: #f2f2f2;
+    border: none;
+  }
+
+  .btn.voice:hover {
+    background: #e5e5e5;
+  }
+  h2 {
+    font-weight: 900;
+    color: #0a0a23;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  h2 .icon {
+    font-size: 24px;
+    background: #eaf3fc;
+    color: #f9d54c;
+    border-radius: 50%;
+    padding: 6px;
+  }
+  .tile-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+  }
+  .tile {
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+    transition: box-shadow 0.3s ease;
+  }
+  .tile:hover {
+    box-shadow: 0 6px 12px rgb(0 0 0 / 0.15);
+  }
+  .icon-wrapper {
+    font-size: 32px;
+  }
+
+  /* Tile background colors */
+  .credit-card {
+    background-color: #fff4cc;
+    color: #8a6821;
+  }
+  .invest {
+    background-color: #dff5ff;
+    color: #0e74e1;
+  }
+  .personal-loan {
+    background-color: #dff5ff;
+    color: #2e72af;
+  }
+  .open-savings {
+    background-color: #d7deff;
+    color: #2a4b8d;
+  }
+  .car-loan {
+    background-color: #ffd9d6;
+    color: #d52c2c;
+  }
+  .home-loan {
+    background-color: #d7deff;
+    color: #2a4b8d;
+  }
+  .account-services {
+    background-color: #ffe6ff;
+    color: #8b2c8b;
+  }
+  .debit-card {
+    background-color: #ffefdb;
+    color: #9a4c32;
+  }
+  .offers {
+    background-color: #e6e4ff;
+    color: #4a44db;
+  }
+  .prepaid-cards {
+    background-color: #dad9ff;
+    color: #3f3bb8;
+  }
+  .sanchar {
+    background-color: #dff5ff;
+    color: #3e7d7d;
+  }
+  .fastag {
+    background-color: #fff7d4;
+    color: #7d781d;
+  }
+
+
+  
+
+  .chat-container {
+    max-width: 450px;
+    margin: 40px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  h2 {
+    margin: 0 0 6px 0;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  p {
+    color: #555;
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  
+  /* Accordion Box */
+  .accordion-box {
+    border-bottom: 1px solid #eee;
+    padding: 3px 0;
+  }
+  
+  .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    color: #333;
+    transition: color 0.3s;
+  }
+  
+  .accordion-header:hover {
+    color: #007bff;
+  }
+  
+  .arrow {
+    transition: transform 0.3s ease;
+  }
+  
+  .arrow.rotate {
+    transform: rotate(180deg);
+  }
+  
+  /* Accordion Body */
+  .accordion-body {
+    display: none;
+    margin-top: 10px;
+  }
+  
+  .accordion-body.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  /* Tile Grid */
+  .tile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 12px;
+  }
+  
+  .tile {
+    padding: 14px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 500;
+    cursor: pointer;
+    background: #f5f5f5;
+    transition: all 0.2s ease;
+    font-size: 14px;
+  }
+  
+  .tile:hover {
+    background: #e0ecff;
+    transform: translateY(-2px);
+  }
+  
+  /* Colored tiles */
+  .tile.yellow {
+    background: #fff3cd;
+  }
+  
+  .tile.blue {
+    background: #cfe2ff;
+  }
+  
+  .tile.lightblue {
+    background: #d1ecf1;
+  }
+  
+  .tile.red {
+    background: #f8d7da;
+  }
+  
+  .tile.purple {
+    background: #e2d9f3;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Chat Loader */
+.chat-loader {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 16px;
+    gap: 6px;
+  }
+  
+  .loader-bubble {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #002d72;
+    animation: bounce 1.4s infinite ease-in-out both;
+  }
+  
+  .loader-bubble:nth-child(1) {
+    animation-delay: -0.32s;
+    background-color: #ff6b00; /* Odisha Orange */
+  }
+  .loader-bubble:nth-child(2) {
+    animation-delay: -0.16s;
+    background-color: #002d72; /* Odisha Blue */
+  }
+  .loader-bubble:nth-child(3) {
+    background-color: #ff6b00;
+  }
+  
+  @keyframes bounce {
+    0%, 80%, 100% {
+      transform: scale(0);
+    }
+    40% {
+      transform: scale(1);
+    }
+  }
+  

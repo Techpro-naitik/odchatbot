@@ -1,0 +1,131 @@
+<div class="odisha-chat-wrapper">
+    <div class="chat-header">
+        <div class="header-left">
+            <img src="./assets/images/odibot.png" width="150px" height="80px" alt="Odisha One" />
+            <div class="header-info">
+                <!-- <h3>OdiBot</h3> -->
+            </div>
+        </div>
+        <div class="header-right">
+            <i class="fas fa-ellipsis-v"></i>
+        </div>
+    </div>
+
+
+    <div class="chat-body" #chatContainer>
+        <div class="accordion-box">
+            <div class="accordion-header" (click)="toggleAccordion('whatsNew')">
+                <span>📝 Do You Want to Register?</span>
+                <span class="arrow" [class.rotate]="activeAccordion === 'whatsNew'">▼</span>
+            </div>
+            <div class="accordion-body" [class.active]="activeAccordion === 'whatsNew'">
+                <div class="tile-grid">
+                    <div class="tile" (click)="submitData('🧾 Register Now')">🧾 Register Now</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-box">
+            <div class="accordion-header" (click)="toggleAccordion('youMayLike')">
+                <span>💳 Quick Pay</span>
+                <span class="arrow" [class.rotate]="activeAccordion === 'youMayLike'">▼</span>
+            </div>
+            <div class="accordion-body" [class.active]="activeAccordion === 'youMayLike'">
+                <div class="tile-grid">
+                    <div class="tile yellow" (click)="submitData('Make a Quick Payment')">💸 Make a Quick Payment</div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="accordion-box">
+            <div class="accordion-header" (click)="toggleAccordion('Department_and_Service')">
+                <span>🏢 Department and Services</span>
+                <span class="arrow" [class.rotate]="activeAccordion === 'Department_and_Service'">▼</span>
+            </div>
+            <div class="accordion-body" [class.active]="activeAccordion === 'Department_and_Service'">
+                <div class="tile-grid">
+                    <div class="tile blue" (click)="submitData('Explore Departments & Services')">🏛️ Explore
+                        Departments & Services</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-box">
+            <div class="accordion-header" (click)="toggleAccordion('Check_Application_Status')">
+                <span>📄 Check Application Status</span>
+                <span class="arrow" [class.rotate]="activeAccordion === 'Check_Application_Status'">▼</span>
+            </div>
+            <div class="accordion-body" [class.active]="activeAccordion === 'Check_Application_Status'">
+                <div class="tile-grid">
+                    <div class="tile blue" (click)="submitData('Track Your Application')">➡️📊 Track Your Application
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="accordion-box">
+            <div class="accordion-header" (click)="toggleAccordion('MSK')">
+                <span>📍 Check Your Nearest ASK</span>
+                <span class="arrow" [class.rotate]="activeAccordion === 'MSK'">▼</span>
+            </div>
+            <div class="accordion-body" [class.active]="activeAccordion === 'MSK'">
+                <div class="tile-grid">
+                    <div class="tile blue" (click)="submitData('Find Your Nearest ASK')">📍 Find Your Nearest ASK</div>
+                    <div class="tile blue" (click)="submitData('ଆପଣଙ୍କ ସବୁଠୁ ନିକଟତମ ASK କୁ ଖୋଜନ୍ତୁ')">📍 ଆପଣଙ୍କ ସବୁଠୁ ନିକଟତମ ASK କୁ ଖୋଜନ୍ତୁ</div>
+
+                </div>
+                <!-- <div class="tile-grid">
+
+                </div> -->
+                
+            </div>
+        </div>
+
+
+        <div class="accordion-box">
+            <div class="accordion-header" (click)="toggleAccordion('Help')">
+                <span>💬 Help And Support</span>
+                <span class="arrow" [class.rotate]="activeAccordion === 'Help'">▼</span>
+            </div>
+            <div class="accordion-body" [class.active]="activeAccordion === 'Help'">
+                <div class="tile-grid">
+                    <div class="tile blue" (click)="submitData('Have a Question?')">❓ Have a Question?</div>
+                    <div class="tile red" (click)="submitData('Explore the User Guide')">📖 Explore the User Guide</div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div *ngFor="let msg of messages" [ngClass]="['chat-message', msg.sender]">
+            <div class="message-content" >
+                <p [innerHTML]="msg.text | markdown"></p>
+
+            </div>
+          
+        </div>
+        <div class="chat-loader" *ngIf="isLoading">
+            <div class="loader-bubble"></div>
+            <div class="loader-bubble"></div>
+            <div class="loader-bubble"></div>
+          </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- Input Footer -->
+    <form [formGroup]="loginForm" (ngSubmit)="submitData()" class="chat-footer">
+        <input type="text" formControlName="userId" placeholder="Type a message..." autocomplete="off" />
+        <button type="submit">
+            <i class="fas fa-paper-plane">➤</i>
+        </button>
+    </form>
+</div>
