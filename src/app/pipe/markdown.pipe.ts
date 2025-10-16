@@ -30,7 +30,7 @@ export class MarkdownPipe implements PipeTransform {
   .replace(/^- (.*?)$/gm, '<li>$1</li>') // Bullet points
   .replace(/(<li>.*?<\/li>)/g, '<ul>$1</ul>') // Wrap lists
   // Markdown-style links [text](url)
-  // .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2"  target="_blank" >$1</a>')
+  // .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2"  targ  et="_blank" >$1</a>')
 
 
   .replace(
