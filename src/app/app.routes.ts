@@ -8,7 +8,7 @@ import { SpeechToTextComponentComponent } from './components/speech-to-text-comp
 
 export const routes: Routes = [
     {
-        path: 'bot',
+        path: '',
         component: LoginComponent,
 
     },
@@ -28,5 +28,5 @@ export const routes: Routes = [
         component: SpeechToTextComponentComponent,
         // loadComponent:(()=> import('./components/speech-to-text-component/speech-to-text-component.component').then((m)=>m.SpeechToTextComponentComponent))
     },
-    { path: "", redirectTo: "bot", pathMatch: "full" }
+    { path: "**", redirectTo: "", pathMatch: "full" }
 ];
